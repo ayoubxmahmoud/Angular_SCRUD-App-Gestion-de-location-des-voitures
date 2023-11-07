@@ -1,0 +1,222 @@
+<app-navbar></app-navbar>
+
+<div class="uk-grid-small uk-child-width-expand@s uk-text-center" uk-grid>
+<div>
+
+    <!-- infos client -->
+    <div *ngFor="let item of itemArray">
+        <div class="uk-card uk-card-default uk-card-body m-3 p-3" *ngIf="item.$key === id">
+            <h3 class="uk-card-title"><i>informations sur le client</i></h3>
+            
+            <div class="uk-margin">
+             <b> Nom : {{item.nom}} </b>
+        </div> 
+        <div class="uk-margin">
+              Prénom : {{item.prenom}} 
+    </div> 
+    <div class="uk-margin">
+        addresse : {{item.address}}
+
+</div> 
+<div class="uk-margin">
+   numéro de téléphone : {{item.phone}}
+</div>
+</div>
+</div>
+</div>
+<!-- end infos client -->
+<!-- voiture -->
+<div>
+    <div class="uk-card uk-card-default uk-card-body m-3 p-3">
+        					<!-- add Voiture -->
+                            <h2 class="uk-card-title"><i>les voitures du client</i> </h2>
+                            <a href="#modal-sections" uk-toggle class="custom-link">
+                                <span class="glyphicon glyphicon-plus-sign">Ajouter une voiture</span> 
+                              </a>
+                              
+                            
+                                                         <!-- EditModel -->
+                                                 <div id="modal-sections" uk-modal>
+                                                        <div class="uk-modal-dialog">
+                                                                <button class="uk-modal-close-default" type="button"
+                                                                        uk-close></button>
+                                                                <div class="uk-modal-header">
+                                                                        <h2 class="uk-modal-title">Ajouter une voiture</h2>
+                                                                </div>
+                                                
+                                                                <div class="uk-margin">
+                                                                    <input class="uk-input"
+                                                                            id="form-horizontal-text" type="text"
+                                                                            placeholder="Le type" name="type"
+                                                                            [(ngModel)]="voiture.type"
+                                                                           >
+                                                            </div>
+                                                            <div class="uk-margin">
+                                                                    <input class="uk-input"
+                                                                            id="form-horizontal-text" type="text"
+                                                                            placeholder="La marque"
+                                                                            name="marque" [(ngModel)]="voiture.marque">
+                                                            </div>
+                                                            <div class="uk-margin">
+                                                                <input class="uk-input"
+                                                                        id="form-horizontal-text" type="text"
+                                                                        placeholder="Le modele"
+                                                                        name="modele" [(ngModel)]="voiture.modele">
+                                                            </div>
+                                                            <div class="uk-margin">
+                                                                <input class="uk-input"
+                                                                        id="form-horizontal-text" type="text"
+                                                                        placeholder="La puissance"
+                                                                        name="puissance" [(ngModel)]="voiture.puissance">
+                                                            </div>
+                                       
+                            
+                            
+                                        <div class="uk-modal-footer uk-text-right">
+                                                <span> <button class="uk-button uk-button-default uk-modal-close"
+                                                                type="button">Cancel</button></span>
+                                                <span> <button class="uk-button uk-button-primary"
+                                                                type="button" (click)="insertVoiture()"
+                                                                >Save</button>
+                                                </span>
+                                        </div>
+                                </div>
+                            </div>
+
+                                <div class="pt-4">
+                                    <table *ngFor="let item of voitureArray">
+                                        <ng-container *ngIf="item.reference === id">
+                                          <tr class="uk-margin">
+                                            <th>Le type </th>
+                                            <th>{{ item.type }}</th>
+                                          </tr>
+                                          <tr class="uk-margin">
+                                            <td>La marque: </td>
+                                            <td>{{ item.marque }}</td>
+                                          </tr>
+                                          <tr class="uk-margin">
+                                            <td>Le modele: </td>
+                                            <td>{{ item.modele }}</td>
+                                          </tr>
+                                          <tr class="uk-margin">
+                                            <td>La puissance: </td>
+                                            <td>{{ item.puissance }}</td>
+                                          </tr>
+                                          <hr>
+                                        </ng-container>
+                                      </table>
+                                </div>
+   
+       
+                              
+
+    </div>
+</div>
+<!-- end voiture -->
+
+<!-- Location Voiture -->
+<div>
+    <div class="uk-card uk-card-default uk-card-body m-3 p-3">
+                            <h2 class="uk-card-title"><i>les locations de client </i></h2>
+                            <a href="#modal-location-sections" class="custom-link" uk-toggle>
+                                <span class="glyphicon glyphicon-plus-sign">Louer une voiture</span> 
+                            </a>
+                            <div id="modal-location-sections" uk-modal>
+                                <div class="uk-modal-dialog">
+                                        <button class="uk-modal-close-default" type="button"
+                                                uk-close></button>
+                                        <div class="uk-modal-header">
+                                            <h2 class="uk-modal-title">Louer une voiture</h2>
+                                        </div>
+                                        <div class="uk-margin">
+                                            <input class="uk-input"
+                                                    id="form-horizontal-text" type="date"
+                                                    placeholder="la date début" name="date_debut"
+                                                    [(ngModel)]="locationVoiture.date_debut"
+                                            >
+                                        </div>
+                                        <div class="uk-margin">
+                                            <input class="uk-input"
+                                                    id="form-horizontal-text" type="date"
+                                                    placeholder="la date fin" name="date_fin"
+                                                    [(ngModel)]="locationVoiture.date_fin"
+                                            >
+                                        </div>
+                                        <div class="uk-margin">
+                                            <input class="uk-input"
+                                                    id="form-horizontal-text" type="time"
+                                                    placeholder="heure début" name="heure_debut"
+                                                    [(ngModel)]="locationVoiture.heure_debut"
+                                            >
+                                        </div>
+                                        <div class="uk-margin">
+                                            <input class="uk-input"
+                                                    id="form-horizontal-text" type="time"
+                                                    placeholder="heure fin" name="heure_fin"
+                                                    [(ngModel)]="locationVoiture.heure_fin"
+                                            >
+                                        </div>
+                                        <div class="uk-margin">
+                                            <input class="uk-input"
+                                                    id="form-horizontal-text" type="number"
+                                                    placeholder="kilométrage début" name="kilometrage_debut"
+                                                    [(ngModel)]="locationVoiture.kilometrage_debut"
+                                            >
+                                        </div>
+                                        <div class="uk-margin">
+                                            <input class="uk-input"
+                                                    id="form-horizontal-text" type="number"
+                                                    placeholder="kilométrage fin" name="kilometrage_fin"
+                                                    [(ngModel)]="locationVoiture.kilometrage_fin"
+                                            >
+                                        </div>
+                                        <div class="uk-modal-footer uk-text-right">
+                                            <span> <button class="uk-button uk-button-default uk-modal-close" 
+                                                    type="button">Cancel</button>
+                                            </span>
+                                            <span> <button class="uk-button uk-button-primary"
+                                                    type="button" (click)="insertLocation()"
+                                                    >Save</button>
+                                            </span>
+
+                                        </div>
+
+                                </div>
+                        </div>
+<!-- end Location Voiture -->
+
+<div class="pt-4"*ngFor="let item of LocationArray"> 
+   
+    <div *ngIf="item.reference === id">
+      <div class="uk-margin">
+        <b>  La date début : {{item.date_debut}} </b>
+    </div> 
+    <div class="uk-margin">
+        La date fin : {{item.date_fin}}
+    </div> 
+    <div class="uk-margin">
+        Heure début : {{item.heure_debut}}
+    </div> 
+    <div class="uk-margin">
+        Heure fin : {{item.heure_fin}}
+    </div> 
+    <div class="uk-margin">
+        Kilométrage début : {{item.kilometrage_debut}}
+    </div> 
+    <div class="uk-margin">
+        Kilométrage fin : {{item.kilometrage_fin}}
+    </div> 
+    <div class="uk-margin">
+        La distance : {{item.distance}}
+    </div> 
+    <div class="uk-margin">
+        <a href="/addfacture/{{item.$key}}" data-toggle="modal" title="add facture"><i class="fa-solid fa-money-check-dollar fa-beat fa-2xl"></i></a> 
+        <a href="/locationinfo/{{item.$key}}" data-toggle="modal" title="voir détails"><i class="fa-solid fa-eye fa-beat-fade fa-2xl"></i></a>
+    </div>
+    <hr>
+    </div>
+</div>
+<!-- end location voiture -->
+
+</div>
+

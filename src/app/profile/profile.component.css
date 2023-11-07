@@ -1,0 +1,30 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: url("https://www.allianz.fr/assurance-particulier/vehicules/assurance-auto/conseils-pratiques/location-voiture/_jcr_content/root/wrapper/wrapper/wrapper/wrapper/multi_column_grid/grid-0-par/image_copy.img.70.1280.jpeg/1595245946330/cle-cession-voiture-pret.jpeg");
+    background-size: cover;
+  }
+  
+  .card {
+    width: 400px;
+    padding: 20px;
+  }
+  
+  .form-group {
+    margin-bottom: 15px;
+  }
+  
+  .btn-info {
+    width: 100%;    
+  }
+  
+  .row {
+    margin-top: 10px;
+  }
+  
+  .text-danger {
+    color: red;
+  }
+  

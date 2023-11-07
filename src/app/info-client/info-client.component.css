@@ -1,0 +1,61 @@
+.uk-margin ,.uk-card-title,.uk-modal-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+
+  .uk-margin a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #333;
+    transition: color 0.3s ease;
+  }
+
+  .uk-margin a:hover {
+    color: #ff5722;
+  }
+
+  .uk-margin i {
+    margin-right: 5px;
+  }
+  .custom-link {
+    color: blue;
+    text-decoration: none;
+  }
+  
+  .custom-link:hover {
+    color: red;
+  }
+  
+  .custom-link span {
+    font-size: 20px;
+    margin-right: 5px;
+  }
+  
+/* Custom styles for the card body */
+.uk-card-body {
+  background-color: #f9f9f9;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Shadow effect */
+
+}
+
+/* Custom styles for the numbered details */
+.uk-card-body .uk-margin {
+  margin-bottom: 5px;
+
+}
+h3.uk-card-title {
+  font-style: italic;
+  color: #043748; /* Desired color for the title */
+}
+
+hr{
+  border: 1px solid #3432322d;
+  width: 40vh;
+}

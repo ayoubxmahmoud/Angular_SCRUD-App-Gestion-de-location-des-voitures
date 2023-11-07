@@ -1,0 +1,116 @@
+<html>
+    <head></head>
+    <style>
+        .uk-navbar-nav a{
+            color:rgb(255, 255, 255);
+            text-decoration: none;
+            font-size: 1.1em;
+            font-weight: 500;
+            padding-left: 30px;
+        }
+        .uk-navbar-nav  a:hover{
+            color:rgb(8, 6, 8);
+        }
+        .uk-navbar-container div{
+            background-color: rgb(15, 162, 71); /* Set the background color here */
+            color:rgb(13, 14, 14);
+            width: 200vh;
+            margin: 0;
+            padding-right: 2rem;
+        }
+        .uk-navbar-right {
+            display: flex;
+            justify-content: flex-end; /* Align items to the right */
+        }
+
+        .uk-navbar-right .profile {
+            position: relative;
+        }
+
+        .uk-navbar-right .profile a[aria-placeholder="profile"] {
+            display: flex;
+            align-items: center;
+            color: rgb(255, 255, 255);
+            text-decoration: none;
+            font-size: 1.1em;
+            font-weight: 500;
+            padding: 0 30px;
+        }
+
+        .uk-navbar-right .profile a[aria-placeholder="profile"] i {
+            font-size: 2rem;
+            margin-right: 5px;
+        }
+
+        .uk-navbar-right .profile .uk-navbar-dropdown {
+            position: absolute;
+            top: 100%; /* Position the dropdown below the profile link */
+            left: 0;
+            width: 180px; /* Set the dropdown width as needed */
+            background-color: rgb(34, 142, 75); /* Background color for the dropdown */
+            display: none; /* Hide the dropdown by default */
+            z-index: 1; /* Ensure it's above other content */
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* You can adjust the shadow values as needed */
+
+        }
+
+        .uk-navbar-right .profile:hover .uk-navbar-dropdown {
+            display: block; /* Show the dropdown when the profile link is hovered */
+        }
+
+        .uk-navbar-right .profile .uk-navbar-dropdown ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .uk-navbar-right .profile .uk-navbar-dropdown ul li {
+            padding: 10px 15px;
+            text-align: center;
+        }
+
+        .uk-navbar-right .profile .uk-navbar-dropdown ul li a {
+            color: rgb(255, 255, 255);
+            text-decoration: none;
+            font-weight: 500;
+            display: block;
+        }
+
+        .uk-navbar-right .profile .uk-navbar-dropdown ul li a:hover {
+            color: rgb(8, 6, 8);
+        }
+
+    </style>
+<body>
+    <header>
+<nav class="uk-navbar-container" uk-navbar>
+    <div class="uk-navbar-left justify-content-start">
+        <ul class="uk-navbar-nav">
+            <li class="uk-active"><a routerLink="/home">Home</a></li>
+            <li><a routerLink="/client">Client</a></li>
+            <li><a routerLink="/voiture">Voiture</a></li>
+            <li><a routerLink="/location_voiture">Location de Voiture</a></li>
+            <li><a routerLink="/facture">Facture</a></li>
+
+        </ul>
+    </div>
+     <div class="uk-navbar-right justify-content-end">
+
+        <ul class="profile">    
+                <a routerLink="#" aria-placeholder="profile"><i class="fa-solid fa-address-card fa-2xl"></i></a>
+                <div class="uk-navbar-dropdown">
+                    <ul class="uk-nav uk-navbar-dropdown-nav">
+                        <li class="uk-active"><a routerLink="/profile" >profile</a></li>
+                        <li><a (click)="logout()">déconnection</a></li>
+                    </ul>
+                </div>
+        </ul>
+
+    </div>
+
+
+</nav>
+    </header>
+</body>
+</html>
+
