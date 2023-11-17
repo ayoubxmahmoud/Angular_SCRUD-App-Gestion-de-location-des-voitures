@@ -82,6 +82,14 @@ This project can be connected to Firebase for various functionalities such as au
 7. **Deployment:**
    - When deploying your Angular app, ensure that you have the Firebase CLI set up, and you can use `firebase deploy` to deploy your app.
 
+### Screenshots:
+
+![client](https://github.com/ayoubxmahmoud/Angular_SCRUD-App-Gestion-de-location-des-voitures/assets/116462151/c5c3b69e-a4b4-48ee-a530-1d371e49b964)
+
+### Quick Demo:
+
+  https://drive.google.com/file/d/1ZOorh5gJqSky3sV4Uf6b74lWK1tufeuy/view?usp=sharing
+
 That's it! Your Angular app is now connected to Firebase for data storage and authentication.
 
 For more detailed instructions and information, refer to the [Firebase Documentation](https://firebase.google.com/docs).
